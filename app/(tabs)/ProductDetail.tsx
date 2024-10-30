@@ -5,7 +5,14 @@ import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
 
-export default function ProductDetail() {
+interface ProductDetailProps {
+  id: string;
+}
+const ProductDetail = ({ id }: ProductDetailProps) => {
+  const onOpenChat = (id?: string) => {};
+
+  const onAddToBasket = (id?: string) => {};
+
   return (
     <ScrollView style={styles.container}>
       <Image
@@ -30,17 +37,20 @@ export default function ProductDetail() {
           color="#f58220"
           type={"outline"}
           title="گفت‌وگو"
+          onPress={() => onOpenChat(id)}
         />
         <Button
           bgColor="#f58220"
           color="#fff"
           type={"primary"}
           title="افزودن به سبد خرید"
+          onPress={() => onAddToBasket(id)}
         />
       </View>
     </ScrollView>
   );
-}
+};
+export default ProductDetail;
 
 const styles = StyleSheet.create({
   container: {

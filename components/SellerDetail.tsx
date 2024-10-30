@@ -9,13 +9,13 @@ const SellerDetail = ({ profileImage }: SellerDitailProps) => {
   return (
     <View style={styles.container}>
       <View>
-        <Text>غرفه دار</Text>
+        <Text style={styles.bold}>غرفه دار</Text>
       </View>
       <Image
         source={require("@/assets/images/profile1.jpg")}
         style={styles.circlePic}
       />
-      <Text style={styles.textHeadingStyle}>عباس بوعذار</Text>
+      <Text style={styles.textHeadingStyle}>فاطمه طالبی</Text>
       <Text style={styles.textGray}>فروشگاه کیف و کفش بیک</Text>
     </View>
   );
@@ -30,6 +30,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     padding: 10,
     borderRadius: 5,
+  },
+  bold: {
+    fontWeight: "bold",
   },
   textHeadingStyle: {
     color: "#0250a3",

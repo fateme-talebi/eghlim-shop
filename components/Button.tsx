@@ -6,8 +6,15 @@ interface ButtonProps {
   bgColor: string;
   color: string;
   type: string;
+  onPress: (param?: any) => void;
 }
-export default function Button({ title, bgColor, color, type }: ButtonProps) {
+export default function Button({
+  title,
+  bgColor,
+  color,
+  type,
+  onPress,
+}: ButtonProps) {
   return (
     <TouchableOpacity
       style={[
@@ -19,6 +26,7 @@ export default function Button({ title, bgColor, color, type }: ButtonProps) {
           borderWidth: type === "outline" ? 1 : 0,
         },
       ]}
+      onPress={onPress}
     >
       <Text style={[styles.buttonText, { color: color }]}>{title}</Text>
     </TouchableOpacity>

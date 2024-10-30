@@ -17,6 +17,7 @@ export default function HomeScreen() {
         <Stack.Screen
           name="ProductDetail"
           component={ProductDetail}
+          initialParams={{ id: "1" }}
           options={({ navigation }) => ({
             headerLeft: () => <HeaderIcons navigation={navigation} />,
             headerRight: () => (
