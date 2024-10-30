@@ -1,8 +1,10 @@
 import { View } from "react-native";
 
-interface ChatProps {}
+interface ChatProps {
+  sellerId: string;
+}
 
-const Chat = (props: ChatProps) => {
+const Chat = ({ sellerId }: ChatProps) => {
   return <View>chat page</View>;
 };
 

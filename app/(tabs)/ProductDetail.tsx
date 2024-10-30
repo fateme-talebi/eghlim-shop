@@ -4,14 +4,19 @@ import SellerDetail from "@/components/SellerDetail";
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
 interface ProductDetailProps {
   id: string;
+  navigation: any;
 }
-const ProductDetail = ({ id }: ProductDetailProps) => {
+const ProductDetail = ({ navigation, id }: ProductDetailProps) => {
   const onOpenChat = (id?: string) => {};
 
-  const onAddToBasket = (id?: string) => {};
+  const onAddToBasket = () => {
+    navigation.navigate("Basket", id);
+  };
 
   return (
     <ScrollView style={styles.container}>
@@ -44,7 +49,7 @@ const ProductDetail = ({ id }: ProductDetailProps) => {
           color="#fff"
           type={"primary"}
           title="افزودن به سبد خرید"
-          onPress={() => onAddToBasket(id)}
+          onPress={onAddToBasket}
         />
       </View>
     </ScrollView>

@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, FlatList, StyleSheet } from "react-native";
 interface BasketProps {
+  id: string;
   route: any;
 }
 const items = [
@@ -8,8 +9,9 @@ const items = [
   { id: 2, name: "Item 2", price: "20,000 تومان" },
 ];
 
-export default function Basket({ route }: BasketProps) {
+export default function Basket({ id, route }: BasketProps) {
   // const { items } = route.params; // Get items from navigation
+  console.log(id, "id");
 
   return (
     <View style={styles.container}>
